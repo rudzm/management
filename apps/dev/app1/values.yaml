@@ -22,23 +22,23 @@ deployment:
   autoscaling:
     enabled: false
 
-  configmaps:
-    - name: configmap
+  configMap:
       enabled: true
-      directKeyValues:
+      data:
         BUCKET_NAME: ab-gitops-bucket-app
 
-  cmdOverwrite: true
-  command: ["/bin/bash"]
-  args:
-    - -c
-    - >
-      while true;
-        do
-          touch $(date +%m-%d-%Y-%M);
-          gsutil cp $(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
-          sleep 90;
-        done
+  commandOverwrite: 
+    enabled: true
+    cmd: ["/bin/bash"]
+    args:
+      - -c
+      - >
+        while true;
+          do
+            touch $(date +%m-%d-%Y-%M);
+            gsutil cp $(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
+            sleep 90;
+          done
 
 bucket:
   name: ab-gitops-bucket-app
