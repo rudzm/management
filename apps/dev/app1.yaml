@@ -16,7 +16,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - globals/globals.yaml
+        - ../globals/globals.yaml
   syncPolicy:
     automated:
       prune: true
