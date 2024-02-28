@@ -1,9 +1,9 @@
 deployment:
   replicaCount: 1
   image:
-    repository: eu.gcr.io/ab-security-dev/gitlab/google/google/cloud-sdk
+    repository: google/cloud-sdk
     pullPolicy: Always
-    tag: "437.0.1"
+    tag: "466.0.0"
   fullnameOverride: "bucket-app"
 
   serviceAccount:
