@@ -5,13 +5,13 @@ type: application
 version: 0.1.0
 appVersion: "1.0"
 dependencies:
-# - name: serviceaccount
-#   repository: https://raw.githubusercontent.com/rudzm/helm-charts/main
-#   version: 0.1.0
+- name: serviceaccount
+  repository: https://raw.githubusercontent.com/rudzm/helm-charts/main
+  version: 0.1.0
 
-# - name: bucket
-#   repository: https://raw.githubusercontent.com/rudzm/helm-charts/main
-#   version: 0.1.0
+- name: bucket
+  repository: https://raw.githubusercontent.com/rudzm/helm-charts/main
+  version: 0.1.0
 
 - name: deployment
   repository: https://raw.githubusercontent.com/rudzm/helm-charts/main

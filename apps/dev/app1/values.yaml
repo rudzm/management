@@ -25,7 +25,7 @@ deployment:
   configMap:
       enabled: true
       data:
-        BUCKET_NAME: ab-gitops-bucket-app
+        BUCKET_NAME: gitops-show-app1-bucket
 
   commandOverwrite: 
     enabled: true
@@ -35,14 +35,14 @@ deployment:
       - >
         while true;
           do
-            echo $(date +%m-%d-%Y-%M)
-            # touch $(date +%m-%d-%Y-%M);
-            # gsutil cp $(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
-            # sleep 90;
+            # echo Witaj na DevSecOps $(date +%m-%d-%Y-%M)
+            touch $(date +%m-%d-%Y-%M);
+            gsutil cp $(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
+            sleep 90;
           done
 
 bucket:
-  name: ab-gitops-bucket-app
+  name: gitops-show-app1-bucket
   location: europe-west2
   storageClass: Standard
   deletionPolicy: Delete
