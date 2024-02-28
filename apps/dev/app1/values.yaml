@@ -29,7 +29,7 @@ deployment:
         BUCKET_NAME: ab-gitops-bucket-app
 
   cmdOverwrite: true
-  command: ["/bin/sh"]
+  command: ["/bin/bash"]
   args:
     - -c
     - >
