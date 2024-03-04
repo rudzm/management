@@ -3,7 +3,7 @@ deployment:
   image:
     repository: google/cloud-sdk
     pullPolicy: Always
-    tag: "466.0.0"
+    tag: "alpine"
   fullnameOverride: "bucket-app"
 
   serviceAccount:
