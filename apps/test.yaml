@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: apps/test
-    repoURL: git@github.com:rudzm/management.git
+    repoURL: https://github.com/rudzm/management.git
     targetRevision: HEAD
   syncPolicy:
     automated:
