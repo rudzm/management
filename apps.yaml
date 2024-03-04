@@ -10,7 +10,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: apps/
-    repoURL: 'git@github.com:rudzm/management.git'
+    repoURL: 'https://github.com/rudzm/management.git'
     targetRevision: HEAD
   sources: []
   project: default
