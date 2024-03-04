@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: apps/dev/app1
-    repoURL: git@github.com:rudzm/management.git
+    repoURL: https://github.com/rudzm/management.git
     targetRevision: HEAD
     helm:
       valueFiles:
