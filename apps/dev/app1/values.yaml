@@ -23,9 +23,11 @@ deployment:
     enabled: false
 
   configMap:
-      enabled: true
-      data:
-        BUCKET_NAME: gitops-show-app1-bucket
+    enabled: true
+    data:
+      BUCKET_NAME: gitops-show-app1-bucket
+      ANOTHER_KEY: value2
+      ANOTHER_KEY2: value3
 
   commandOverwrite: 
     enabled: true
