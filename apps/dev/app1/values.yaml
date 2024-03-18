@@ -37,7 +37,7 @@ deployment:
       - >
         while true;
           do
-            echo Witaj na DevSecOps $(date +%m-%d-%Y-%M)
+            echo Welcome on DevOpsDay $(date +%m-%d-%Y-%M)
             # touch $(date +%m-%d-%Y-%M);
             # gsutil cp $(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
             # sleep 90;
