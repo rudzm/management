@@ -9,9 +9,9 @@ dependencies:
   repository: https://raw.githubusercontent.com/rudzm/helm-charts/main
   version: 0.1.0
 
-# - name: bucket
-#   repository: https://raw.githubusercontent.com/rudzm/helm-charts/main
-#   version: 0.1.0
+- name: bucket
+  repository: https://raw.githubusercontent.com/rudzm/helm-charts/main
+  version: 0.1.0
 
 - name: deployment
   repository: https://raw.githubusercontent.com/rudzm/helm-charts/main
