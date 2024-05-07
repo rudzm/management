@@ -36,8 +36,8 @@ deployment:
         while true;
           do
             echo Welcome to SII $(date +%m-%d-%Y-%M)
-            #touch $(date +%m-%d-%Y-%M);
-            #gsutil cp $(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
+            touch $(date +%m-%d-%Y-%M);
+            gsutil cp $(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
             sleep 90;
           done
 
