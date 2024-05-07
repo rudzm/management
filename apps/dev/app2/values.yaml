@@ -1,0 +1,61 @@
+deployment:
+  replicaCount: 1
+  image:
+    repository: google/cloud-sdk
+    pullPolicy: Always
+    tag: "alpine"
+  fullnameOverride: "bucket-app"
+
+  serviceAccount:
+    create: true
+    workloadIdentity: true
+    automount: true
+    name: "gitops-bucket-sa2"
+
+  livenessProbe:
+
+  readinessProbe:
+
+  ingress:
+    enabled: false
+
+  autoscaling:
+    enabled: false
+
+  configMap:
+    enabled: true
+    data:
+      BUCKET_NAME: gitops-show-app2-bucket
+
+  commandOverwrite: 
+    enabled: true
+    cmd: ["/bin/bash"]
+    args:
+      - -c
+      - >
+        while true;
+          do
+            echo Welcome to SII $(date +%m-%d-%Y-%M)
+            touch $(date +%m-%d-%Y-%M);
+            gsutil cp $(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
+            sleep 90;
+          done
+
+bucket:
+  name: gitops-show-app2-bucket
+  location: europe-west2
+  storageClass: Standard
+  deletionPolicy: Delete
+  annotations: {}
+  labels: {}
+  iam:
+    enabled: true
+    member: gitops-bucket-sa2
+    role: roles/storage.admin
+
+serviceaccount:
+  name: gitops-bucket-sa2
+  annotations: {}
+  labels: {}
+
+
