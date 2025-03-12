@@ -36,14 +36,14 @@ deployment:
         while true;
           do
             echo Welcome to Cloud Native Warsaw $(date +%m-%d-%Y-%M)
-            touch $(date +%m-%d-%Y-%M);
-            gsutil cp $(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
+            touch app-2-$(date +%m-%d-%Y-%M);
+            gsutil cp app-2-$(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
             sleep 90;
           done
 
 bucket:
   name: gitops-show-app2-bucket
-  location: europe-west2
+  location: us-central1
   storageClass: Standard
   deletionPolicy: Delete
   annotations: {}
