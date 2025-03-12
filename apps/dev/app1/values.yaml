@@ -43,7 +43,7 @@ deployment:
 
 bucket:
   name: gitops-show-app1-bucket
-  location: europe-west2
+  location: us-central1
   storageClass: Standard
   # storageClass: Nearline
   deletionPolicy: Delete
