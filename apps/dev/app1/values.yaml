@@ -10,7 +10,7 @@ deployment:
     create: true
     workloadIdentity: true
     automount: true
-    name: "gitops-bucket-sa"
+    name: "bucket-app-sa"
 
   livenessProbe:
 
@@ -50,11 +50,11 @@ bucket:
   labels: {}
   iam:
     enabled: true
-    member: gitops-bucket-sa
+    member: bucket-app-sa
     role: roles/storage.admin
 
 serviceaccount:
-  name: gitops-bucket-sa
+  name: bucket-app-sa
   annotations: {}
   labels: {}
 

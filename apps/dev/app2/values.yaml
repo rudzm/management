@@ -4,13 +4,13 @@ deployment:
     repository: google/cloud-sdk
     pullPolicy: Always
     tag: "alpine"
-  fullnameOverride: "bucket-app"
+  fullnameOverride: "bucket-app-2"
 
   serviceAccount:
     create: true
     workloadIdentity: true
     automount: true
-    name: "gitops-bucket-sa2"
+    name: "bucket-app-2-sa"
 
   livenessProbe:
 
@@ -35,7 +35,7 @@ deployment:
       - >
         while true;
           do
-            echo Welcome to SII $(date +%m-%d-%Y-%M)
+            echo Welcome to Cloud Native Warsaw $(date +%m-%d-%Y-%M)
             touch $(date +%m-%d-%Y-%M);
             gsutil cp $(date +%m-%d-%Y-%M) gs://$BUCKET_NAME;
             sleep 90;
@@ -50,11 +50,11 @@ bucket:
   labels: {}
   iam:
     enabled: true
-    member: gitops-bucket-sa2
+    member: bucket-app-2-sa
     role: roles/storage.admin
 
 serviceaccount:
-  name: gitops-bucket-sa2
+  name: bucket-app-2-sa
   annotations: {}
   labels: {}
 
