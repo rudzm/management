@@ -44,7 +44,8 @@ deployment:
 bucket:
   name: gitops-show-app1-bucket
   location: europe-west2
-  storageClass: Nearline
+  storageClass: Standard
+  # storageClass: Nearline
   deletionPolicy: Delete
   annotations: {}
   labels: {}
